@@ -5,5 +5,5 @@ bosh = ::File.join(node['bin_dir'], 'bosh')
 remote_file bosh do
   source node['sprout']['bosh-cli']['url']
   mode   '0755'
-  not_if { ::File.exist?(bosh) && `#{bosh} -version`.strip.split[1].split('-').first == node['sprout']['bosh']['version'] }
+  not_if { ::File.exist?(bosh) && `#{bosh} -version`.strip.split[1].split('-').first == node['sprout']['bosh-cli']['version'] }
 end
