@@ -1,6 +1,6 @@
 include_recipe 'sprout-base::bin_dir'
 
-bosh = ::File.join(ENV['HOME'], node['bin_dir'], 'bosh')
+bosh = ::File.join(node['bin_dir'], 'bosh')
 
 remote_file bosh do
   source node['sprout']['bosh-cli']['url']
